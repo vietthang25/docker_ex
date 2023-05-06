@@ -1,0 +1,9 @@
+e2cnn
+matplotlib
+mmcv-full>=1.5.0
+mmdet
+numpy
+pycocotools
+six
+terminaltables
+torch

@@ -1,0 +1,49 @@
+{
+	"name": "Phe_AutoParking",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+
+	//Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/bin/bash"
+			}
+		},
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.languageServer": "Pylance",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
+	},
+
+	"runArgs": [
+		"--name", "Phe_AutoParking",
+		"--gpus=all", 
+		"--shm-size=1G",
+        "-v", "/tmp/.X11-unix/X0:/tmp/.X11-unix/X0",
+		"-v", "/home/dungnq/Documents/dota:/workspaces/Phe_AutoParking/mmrotate/data/DOTA/"
+		// "-v", "/media/ub18-2/MyBookDuo/dataset_nuScenes2/:/workspaces/smoke_v2/dataset/nuScenes/"
+	],
+
+
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-vscode.cpptools",
+		"austin.code-gnu-global",
+		"xshrim.txt-syntax"
+	]
+
+}
